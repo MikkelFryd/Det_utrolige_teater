@@ -1,0 +1,25 @@
+@import '../../../assets/scss/vars.scss';
+
+.footer {
+    width: 100%;
+    background-color: $dark-color;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    color: white;
+    font-family: $font-primary;
+    .gridarticle {
+        padding-left: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .iconcontainer {
+       display: flex;
+       width: 50%;
+       gap: 1rem;
+       align-items: flex-start;
+       padding: 1rem;
+       img {
+        width: 20%;
+       }
+    }
+}

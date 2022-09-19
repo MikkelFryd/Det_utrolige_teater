@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Actors } from '../pages/Actors'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
-import { Performances } from '../pages/Performances'
+import { Events } from '../pages/Events'
 
 export const AppRouter = () => {
 
@@ -10,7 +10,7 @@ export const AppRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/performances" element={<Performances />} />
+            <Route path="/events" element={<Events />} />
             <Route path="/actors" element={<Actors />} />
             <Route path="/login" element={<Login />} />
         </Routes>

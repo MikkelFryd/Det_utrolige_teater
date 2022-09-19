@@ -1,0 +1,16 @@
+@import '../../../assets/scss/vars.scss';
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    justify-content: end;
+    a {
+        font-family: $font-primary;
+        text-decoration: none;
+        color: $dark-color;
+    }
+    a:hover {
+        color: $light-brown;
+    }
+}

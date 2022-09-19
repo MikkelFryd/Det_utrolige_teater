@@ -1,6 +1,6 @@
 
 
-export const Performances = () => {
+export const Events = () => {
 
     return (
         <section>

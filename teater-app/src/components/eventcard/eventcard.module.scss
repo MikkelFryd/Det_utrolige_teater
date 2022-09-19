@@ -1,0 +1,72 @@
+@import '../../assets/scss/vars.scss';
+
+.eventcard {
+    display: grid;
+    grid-template-rows: 50% 40% 10%;
+    border: 1px solid $dark-brown;
+    div {
+        border: 8px solid $dark-brown;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    figcaption {
+        padding: 8px;
+        display: grid;
+        justify-items: right;
+        grid-template-rows: 1fr 1fr 1fr;
+        h5 {
+            font-family: $font-primary;
+            color: dimgray;
+        }
+        h4 {
+            font-family: $font-primary;
+            color: $dark-color;
+            border-bottom: 1px solid #d3d3d3;
+        }
+        h3 {
+            font-family: $font-primary;
+            color: dimgray;
+            margin: 0;
+        }
+        h2 {
+            font-family: $font-secondary;
+            font-size: 2.5rem;
+            color: $light-brown;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+    .buttoncontainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        border: none;
+        padding: 8px;
+        width: 60%;
+        margin: auto;
+        gap: 2rem;
+        button:first-of-type {
+            background-color: $dark-color;
+            border: none;
+            height: 100%;
+            color: white;
+            padding: 8px;
+            width: 100%;
+            font-size: 1rem;
+            font-family: $font-primary;
+        }
+        button:last-of-type {
+            width: 100%;
+            font-family: $font-primary;
+            font-size: 1rem;
+            background-color: $light-brown;
+            border: none;
+            height: 100%;
+            color: white;
+            padding: 8px;
+        }
+    }
+}

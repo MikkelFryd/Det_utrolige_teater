@@ -1,0 +1,23 @@
+@import '../../../assets/scss/vars.scss';
+
+.searchcontainer {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: end;
+    height: 3vh;
+    input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #d3d3d3;
+        outline: none;
+    }
+    button {
+        width: 10%;
+        background-image: url('../../../assets/images/SearchIcon.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        border: none;
+        background-color: white;
+    }
+}
