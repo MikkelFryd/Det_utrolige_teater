@@ -1,0 +1,14 @@
+
+
+.eventcontainer {
+    width: 90%;
+    margin: auto;
+    article {
+        width: 100%;
+        .eventlist {
+            width: 100%;
+            display: grid;
+            gap: 1rem;
+        }
+    }
+}

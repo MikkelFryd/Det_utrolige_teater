@@ -1,0 +1,45 @@
+@import '../../../assets/scss/vars.scss';
+
+.eventfigure {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    border: 1px solid $dark-brown;
+    div {
+        border: 8px solid $dark-brown;
+        background-image: url('../../../assets/images/Fyrtøjet.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 50vh;
+        background-position: center;
+    }
+    figcaption {
+        padding: 8px;
+        margin: 1rem;
+        text-align: right;
+        width: 90%;
+        transform: translateY(20vh);
+        h5 {
+            font-family: $font-primary;
+            color: dimgray;
+            font-size: 1rem;
+        }
+        h4 {
+            font-family: $font-primary;
+            color: $dark-color;
+            border-bottom: 1px solid #d3d3d3;
+            font-size: 1rem;
+        }
+        h3 {
+            font-family: $font-primary;
+            color: dimgray;
+            font-size: 1rem;
+        }
+        h1 {
+            margin: 0;
+            font-family: $font-secondary;
+            font-size: 3rem;
+            color: $light-brown;
+            font-weight: 400;
+        }
+    }
+}
