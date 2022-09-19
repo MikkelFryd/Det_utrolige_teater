@@ -74,19 +74,21 @@
     grid-template-columns: 10% 60% 30%;
     border: 1px solid $dark-brown;
     align-items: center;
-        img {
-            border: 4px solid $dark-brown;
-            width: 8vw;
-            height: 8vw;
-            object-fit: cover;
-        }
+    img {
+        border: 4px solid $dark-brown;
+        width: 8vw;
+        height: 8vw;
+        object-fit: cover;
+    }
     figcaption {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        // word-break: keep-all;
+        width: 100%;
         .eventheaders {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            width: 95%;
+            margin: auto;
             h5 {
                 font-family: $font-primary;
                 color: dimgray;
@@ -97,13 +99,13 @@
             }
         }
         h1 {
-            padding: 1rem;
+            // padding: 1rem;
             border-right: 1px solid #d3d3d3;
             font-family: $font-secondary;
-            font-size: 2.5em;
+            font-size: 3rem;
             color: $light-brown;
             font-weight: 400;
-            margin: 0 auto;
+            margin: 0;
         }
     }
     .buttoncontainer {

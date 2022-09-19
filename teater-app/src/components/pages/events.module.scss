@@ -1,10 +1,18 @@
-
+@import '../../assets/scss/vars.scss';
 
 .eventcontainer {
     width: 90%;
     margin: auto;
     article {
         width: 100%;
+        .headingtitle {
+            font-family: $font-secondary;
+            font-size: 4rem;
+            color: $dark-brown;
+            margin: 2rem;
+            text-align: end;
+            font-weight: 400;
+        }
         .eventlist {
             width: 100%;
             display: grid;

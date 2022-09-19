@@ -19,7 +19,7 @@ export const Events = () => {
             <Header />
             <Teaser />
             <article>
-                <h1>OVERSIGT</h1>
+                <h1 className={Style.headingtitle}>OVERSIGT</h1>
                 <section className={Style.eventlist}>
                     {eventData && eventData.map((item, index) => {
                         return (
