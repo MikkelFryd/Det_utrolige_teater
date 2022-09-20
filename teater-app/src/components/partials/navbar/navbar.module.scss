@@ -3,14 +3,24 @@
 .navbar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
     gap: 1rem;
-    justify-content: end;
+    text-align: center;
     a {
         font-family: $font-primary;
         text-decoration: none;
         color: $dark-color;
     }
     a:hover {
+        color: $light-brown;
+    }
+    p {
+        font-family: $font-primary;
+        text-decoration: none;
+        color: $dark-color;
+        cursor: pointer;
+    }
+    p:hover {
         color: $light-brown;
     }
 }

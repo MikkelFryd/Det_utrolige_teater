@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Style from './eventcard.module.scss'
 
 export const EventCard = props => {
@@ -15,8 +16,8 @@ export const EventCard = props => {
                     </div>
                 </figcaption>
                 <div className={Style.buttoncontainer}>
-                    <button>LÆS MERE</button>
-                    <button>KØB BILLET</button>
+                    <Link to={`/events/${props.item.id}`}>LÆS MERE</Link>
+                    <Link to={`/shop/${props.item.id}`}>KØB BILLET</Link>
                 </div>
             </figure>
         : 
@@ -31,8 +32,8 @@ export const EventCard = props => {
             <h3>{props.item.genre}</h3>
         </figcaption>
         <div className={Style.buttoncontainer}>
-            <button>LÆS MERE</button>
-            <button>KØB BILLET</button>
+        <Link to={`/events/${props.item.id}`}>LÆS MERE</Link>
+        <Link to={`/shop/${props.item.id}`}>KØB BILLET</Link>
         </div>
     </figure>
     )

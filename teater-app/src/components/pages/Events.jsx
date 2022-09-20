@@ -8,7 +8,7 @@ import Style from './events.module.scss'
 
 
 export const Events = () => {
-    const [isFromEvent, setIsFromEvent] = useState(true)
+    const [ isFromEvent ] = useState(true)
 
     const {eventData} = useEvent()
     console.log(eventData)

@@ -1,12 +1,10 @@
 import { Header } from "../partials/header/Header"
 import Style from './home.module.scss'
-import { useState, useEffect, useContext } from "react"
+import { useEffect } from "react"
 import axios from 'axios'
-import HeroImg from '../../assets/images/Fyrtøjet.jpg'
 import { EventCard } from "../eventcard/EventCard"
 import { Footer } from "../partials/footer/Footer"
 import { Teaser } from "../partials/teaser/Teaser"
-import { Events } from "./Events"
 import { Link } from "react-router-dom"
 import { useEvent } from "../context/event/Event"
 
@@ -21,7 +19,7 @@ export const Home = () => {
             setEventData(result.data.items)
         }
         getEventData()
-    }, [])
+    }, [setEventData])
 
     let slicedArr = eventData.slice(0, 3)
 

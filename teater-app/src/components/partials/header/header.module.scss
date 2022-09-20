@@ -3,8 +3,9 @@
 .header {
     display: grid;
     grid-template-columns: 30% 70%;
-    width: 100%;
-    margin: 1rem;
+    width: 90%;
+    padding: 1rem;
+    margin: auto;
     .navcontainer {
         display: grid;
         grid-template-rows: 1fr 1fr;

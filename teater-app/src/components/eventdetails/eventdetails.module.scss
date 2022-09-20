@@ -1,0 +1,110 @@
+@import '../../assets/scss/vars.scss';
+
+.detailscontainer {
+    margin: auto;
+    width: 90%;
+    div {
+        width: 90%;
+        margin: auto;
+        figure {
+            border: 1px solid $dark-brown;
+            // width: 100%;
+            .background {
+                width: 96%;
+                height: 40vw;
+                border: 1.5vw solid $dark-brown;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                button {
+                    transform: translate(65vw, 3vw);
+                }
+            }
+            figcaption {
+                article {
+                    display: grid;
+                    grid-template-rows: 20% 20% 60%;
+                    width: 100%;
+                    align-items: center;
+                    .titlecontainer {
+                        display: grid;
+                        grid-template-rows: 1fr 1fr;
+                    }
+                    section {
+                        display: grid;
+                        grid-template-columns: 70% 30%;
+                        align-self: baseline;
+                        align-items: center;
+                        div {
+                            padding: 1rem;
+                            align-items: self-end;
+                            button {
+                                width: 60%;
+                                border: none;
+                                color: white;
+                                background-color: $dark-brown;
+                                margin: auto;
+                                font-weight: 600;
+                                font-family: $font-primary;
+                                height: 4vw;
+                                font-size: 1.5rem;
+                            }
+                        }
+                        h3 {
+                            font-size: 1.3rem;
+                            font-weight: 400;
+                        }
+                        h5 {
+                            font-size: 1.2rem;
+                            font-weight: 400;
+                        }
+                        h1 {
+                            font-family: $font-secondary;
+                            font-weight: 600;
+                            color: $light-brown;
+                            font-size: 3rem;
+                            margin: 0;
+                        }
+                    }
+                    h3 {
+                        font-size: 1rem;
+                    }
+                    div {
+                        p {
+                            color: $dark-color;
+                            font-size: 1.2rem;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            h3 {
+                padding: 1rem;
+                font-family: $font-primary;
+                font-size: 2rem;
+                color: $dark-color;
+            }
+            .actorcontainer {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                width: 90%;
+                margin: auto;
+                padding: 1rem;
+                gap: 1rem;
+                div {
+                    border: 1px solid $dark-brown;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                    }
+                    p {
+                        margin: 0;
+                        text-align: center;
+                        color: $light-brown;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
