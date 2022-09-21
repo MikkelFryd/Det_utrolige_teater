@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { LoginOverlay } from "../loginoverlay/LoginOverlay"
 import Style from './navbar.module.scss'
 import { useState } from "react"
-import { useAuth } from "../../context/auth/Auth"
+import { useAuth } from "../../context/authcontext/Auth"
 
 export const Navbar = () => {
 

@@ -6,12 +6,15 @@ import { EventCard } from "../eventcard/EventCard"
 import { Footer } from "../partials/footer/Footer"
 import { Teaser } from "../partials/teaser/Teaser"
 import { Link } from "react-router-dom"
-import { useEvent } from "../context/event/Event"
+import { useEvent } from "../context/eventcontext/Event"
+import { useState } from "react"
 
 
 export const Home = () => {
 
     const {eventData, setEventData} = useEvent()
+
+    const [searchData, setSearchData] = useState([])
 
     useEffect(() => {
         const getEventData = async () => {
@@ -21,23 +24,35 @@ export const Home = () => {
         getEventData()
     }, [setEventData])
 
-    let slicedArr = eventData.slice(0, 3)
+    let slicedSearchArr = searchData.slice(0, 3)
+    let slicedEventArr = eventData.slice(0, 3)
 
     console.log(eventData)
 
     return (
         <>
         <section className={Style.homecontainer}>
-            <Header />
+            <Header setSearchData={setSearchData}/>
             <Teaser />
             <article>
+                {
+                slicedSearchArr.length > 0 ? 
                 <section className={Style.gridcontainer}>
-                    {slicedArr && slicedArr.map((item, index) => {
+                {slicedSearchArr && slicedSearchArr.map((item, index) => {
+                    return (
+                            <EventCard item={item} key={index}/>
+                        )
+                    })}
+                </section>
+                : 
+                <section className={Style.gridcontainer}>
+                    {slicedEventArr && slicedEventArr.map((item, index) => {
                         return (
                             <EventCard item={item} key={index}/>
                         )
                     })}
                 </section>
+                }
             </article>
             <div className={Style.eventbutton}>
                 <button><Link to="/events">SE ALLE FORESTILLINGER</Link></button>

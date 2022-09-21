@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState } from "react";
-import { useAuth } from "../../context/auth/Auth";
+import { useAuth } from "../../context/authcontext/Auth";
 import { useNavigate } from "react-router-dom";
 import Style from './loginoverlay.module.scss'
 
@@ -41,11 +41,6 @@ export const LoginOverlay = () => {
       setLoginData(data);
       navigate('/login')
     }
-  };
-
-  const logOut = () => {
-    sessionStorage.removeItem("token");
-    setLoginData("");
   };
 
   const handleLogin = () => {

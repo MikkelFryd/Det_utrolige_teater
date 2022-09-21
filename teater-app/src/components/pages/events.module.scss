@@ -13,6 +13,12 @@
             text-align: end;
             font-weight: 400;
         }
+        .eventheader {
+            font-size: 4rem;
+            color: $light-brown;
+            font-family: $font-secondary;
+            text-align: end;
+        }
         .eventlist {
             width: 100%;
             display: grid;

@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Styles from "./favoritebutton.module.scss"
-import { useFavorites } from "../context/favorites/Favorite"
-import { useAuth } from "../context/auth/Auth"
+import { useFavorites } from "../context/favoritecontext/Favorite"
+import { useAuth } from "../context/authcontext/Auth"
 import {ReactComponent as HeartIcon} from '../../assets/images/heart.svg'
 
 /**

@@ -1,16 +1,17 @@
 import { Navbar } from "../navbar/Navbar"
 import Logo from '../../../assets/images/Logo.svg'
-import { Search } from "../search/Search"
 import Style from './header.module.scss'
+import { Search } from "../search/Search"
 
 
-export const Header = () => {
+export const Header = props => {
+
 
     return (
         <header className={Style.header}>
             <img src={Logo} alt="Logo" />
             <div className={Style.navcontainer}>
-                <Search />
+                <Search setSearchData={props.setSearchData}/>
                 <Navbar />
             </div>
         </header>
