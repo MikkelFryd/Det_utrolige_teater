@@ -17,7 +17,6 @@ export const LoginOverlay = () => {
   const navigate = useNavigate()
 
   const [message, setMessage] = useState("");
-  const [displayLogin, setDisplayLogin] = useState(false)
 
   const sendLoginRequest = async (data) => {
     const formData = new FormData();
@@ -42,14 +41,6 @@ export const LoginOverlay = () => {
       navigate('/login')
     }
   };
-
-  const handleLogin = () => {
-    if(displayLogin === false) {
-        setDisplayLogin(true)
-    } else {
-        setDisplayLogin(false)
-    }
-  }
 
   return (
     <>

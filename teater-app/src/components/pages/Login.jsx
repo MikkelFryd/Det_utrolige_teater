@@ -5,6 +5,8 @@ import { Header } from "../partials/header/Header";
 import Style from './login.module.scss'
 import LoginHeart from '../../assets/images/LoginHeart.svg'
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import axios from "axios";
 
 export const Login = () => {
 
@@ -12,7 +14,18 @@ export const Login = () => {
 
   const { favorites } = useFavorites()
 
+  const [reviewData, setReviewData] = useState([])
+
   const navigate = useNavigate()
+
+  const sortData = () => {
+
+    const myReviews = reviewData.filter(item => item.user_id === 39);
+
+    console.log(myReviews)
+  }
+
+  console.log(reviewData.includes())
   
   const logOut = () => {
     sessionStorage.removeItem("token");
@@ -20,7 +33,15 @@ export const Login = () => {
     navigate('/')
   };
 
-  console.log(favorites)
+  useEffect(() => {
+    const getReviewData = async () => {
+        let result = await axios.get('https://api.mediehuset.net/detutroligeteater/reviews')
+        setReviewData(result.data.items)
+        sortData()
+    }
+    getReviewData()
+}, [])
+
 
   return (
     <>
@@ -65,6 +86,12 @@ export const Login = () => {
         <article>
             <div>
                 <h4>MINE ANMELDELSER</h4>
+                {reviewData && reviewData.map((item, index) => {
+                    return (
+                        <>
+                        </>
+                    )
+                })}
             </div>
         </article>
       </section> : null        

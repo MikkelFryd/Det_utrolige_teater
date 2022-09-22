@@ -6,8 +6,13 @@
     div {
         width: 90%;
         margin: auto;
+        display: grid;
         figure {
             border: 1px solid $dark-brown;
+            border-bottom: 2px solid $dark-brown;
+            border-bottom-style: dashed;
+            width: 90%;
+            margin: auto;
             .background {
                 width: 96%;
                 height: 40vw;
@@ -52,10 +57,12 @@
                         h3 {
                             font-size: 1.3rem;
                             font-weight: 400;
+                            font-family: $font-primary;
                         }
                         h5 {
                             font-size: 1.2rem;
                             font-weight: 400;
+                            font-family: $font-primary;
                         }
                         h1 {
                             font-family: $font-secondary;

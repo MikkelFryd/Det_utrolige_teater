@@ -5,6 +5,7 @@ import { Footer } from "../partials/footer/Footer";
 import { Header } from "../partials/header/Header";
 import Style from './eventdetails.module.scss'
 import FavoriteButton from "../favoritebutton/FavoriteButton";
+import { Reviews } from "../reviews/Reviews";
 
 export const EventDetails = () => {
   const [eventDetails, setEventDetails] = useState([]);
@@ -69,6 +70,7 @@ export const EventDetails = () => {
             </div>
             </figcaption>
         </figure>
+        <Reviews id={eventDetails.id} />
         </div>
         </section> : null
     }

@@ -5,6 +5,8 @@ import { Login } from '../pages/Login'
 import { Events } from '../pages/Events'
 import { EventDetails } from '../eventdetails/EventDetails'
 import { Shop } from '../pages/Shop'
+import { ActorsDetails } from '../actorsdetails/ActorsDetails'
+import { Reviews } from '../reviews/Reviews'
 
 export const AppRouter = () => {
 
@@ -16,7 +18,10 @@ export const AppRouter = () => {
                 <Route index element={<Events />} />
                 <Route path=":id" element={<EventDetails />} />
             </Route>
-            <Route path="/actors" element={<Actors />} />
+            <Route path="/actors">
+                <Route index element={<Actors />} />
+                <Route path=":id" element={<ActorsDetails />} />
+            </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/shop" element={<Shop />} />
         </Routes>
