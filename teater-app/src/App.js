@@ -11,11 +11,11 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <EventProvider>
-            <FavoriteProvider>
-              <AppRouter>
-                <Home />
-              </AppRouter>
-            </FavoriteProvider>
+          <FavoriteProvider>
+            <AppRouter>
+              <Home />
+            </AppRouter>
+          </FavoriteProvider>
         </EventProvider>
       </AuthProvider>
     </BrowserRouter>

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useAuth } from "../../context/authcontext/Auth";
 import { useNavigate } from "react-router-dom";
-import Style from './loginoverlay.module.scss'
+import Style from "./loginoverlay.module.scss";
 
 export const LoginOverlay = () => {
   const {
@@ -14,7 +14,7 @@ export const LoginOverlay = () => {
 
   const { loginData, setLoginData } = useAuth();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [message, setMessage] = useState("");
 
@@ -38,14 +38,17 @@ export const LoginOverlay = () => {
     if (data) {
       sessionStorage.setItem("token", JSON.stringify(data));
       setLoginData(data);
-      navigate('/login')
+      navigate("/login");
     }
   };
 
   return (
     <>
       {!loginData && !loginData.username ? (
-        <form className={Style.loginoverlay} onSubmit={handleSubmit(sendLoginRequest)}>
+        <form
+          className={Style.loginoverlay}
+          onSubmit={handleSubmit(sendLoginRequest)}
+        >
           <div className={Style.gridcontainer}>
             <input
               type="text"
@@ -62,11 +65,10 @@ export const LoginOverlay = () => {
             />
             {errors.password && <span>Du skal indtaste din adgangskode!</span>}
           </div>
-            <button>LOGIN</button>
+          <button>LOGIN</button>
           {message && <div>{message}</div>}
         </form>
-      ) : null
-      }
+      ) : null}
     </>
   );
 };

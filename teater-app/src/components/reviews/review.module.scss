@@ -1,8 +1,6 @@
 @import '../../assets/scss/vars.scss';
 
 .reviewcontainer {
-    width: 90%;
-    margin: auto;
     border: 1px solid $dark-brown;
     border-top: none;
     display: grid;
@@ -22,8 +20,7 @@
             justify-content: left;
             padding: 1rem;
             .starscontainer {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                width: 100%;
             }
             p {
                 color: $light-brown;
@@ -54,6 +51,7 @@
             .reviewwrapper {
                 width: 100%;
                 gap: 1rem;
+                display: grid;
                 .headerwrapper {
                     display: grid;
                     grid-template-columns: 5% 95%;
@@ -68,6 +66,7 @@
                 .gridwrapper {
                     display: grid;
                     grid-template-columns: 15% 0%;
+                    align-items: center;
                     width: 100%;
                     p {
                         font-family: $font-primary;

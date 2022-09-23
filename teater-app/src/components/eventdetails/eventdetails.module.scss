@@ -2,27 +2,19 @@
 
 .detailscontainer {
     margin: auto;
-    width: 90%;
+    width: 80%;
     div {
-        width: 90%;
-        margin: auto;
-        display: grid;
         figure {
             border: 1px solid $dark-brown;
             border-bottom: 2px solid $dark-brown;
             border-bottom-style: dashed;
-            width: 90%;
             margin: auto;
             .background {
-                width: 96%;
                 height: 40vw;
                 border: 1.5vw solid $dark-brown;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
-                button {
-                    transform: translate(65vw, 3vw);
-                }
             }
             figcaption {
                 article {
@@ -42,7 +34,9 @@
                         div {
                             padding: 1rem;
                             align-items: self-end;
-                            button {
+                            a {
+                                text-decoration: none;
+                                padding: 1rem;
                                 width: 60%;
                                 border: none;
                                 color: white;
@@ -76,6 +70,7 @@
                         font-size: 1rem;
                     }
                     div {
+                        padding: 1rem;
                         p {
                             color: $dark-color;
                             font-size: 1.2rem;
@@ -93,7 +88,6 @@
             .actorcontainer {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
-                width: 90%;
                 margin: auto;
                 padding: 1rem;
                 gap: 1rem;

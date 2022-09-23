@@ -1,74 +1,51 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import Styles from "./favoritebutton.module.scss"
-import { useFavorites } from "../context/favoritecontext/Favorite"
-import { useAuth } from "../context/authcontext/Auth"
-import {ReactComponent as HeartIcon} from '../../assets/images/heart.svg'
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Style from "./favoritebutton.module.scss";
+import { useFavorites } from "../context/favoritecontext/Favorite";
+import { useAuth } from "../context/authcontext/Auth";
+import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 
-/**
- * Knap komponent som kan tilføje og fjerne et 
- * produkt fra en favorit liste.
- * Anvender FavoriteProvider med useContext metode
- * Kræver login
- * @param {*} param 
- * @returns 
- */
 const FavoriteButton = ({ event_id }) => {
-  // Henter auth data
-  const { loginData } = useAuth()
-  // Henter liste over eksisterende favoritter
-  const { favorites } = useFavorites()
-  // Sætter var til at indikere om produkt er favorit eller ej
-  const [isFavorite, setIsFavorite] = useState(false)
+  const { loginData } = useAuth();
+  const { favorites } = useFavorites();
+  const [isFavorite, setIsFavorite] = useState(false);
 
-  // Kalder useEffect
   useEffect(() => {
-	// Hvis vi allerede har favoritter...
-    if(favorites.length) {
-	  // Setter bool efter om produkt ligger i listen over favoritter
-      setIsFavorite(() =>
-        favorites.some(item => item.event_id === event_id)
-      )
+    if (favorites.length) {
+      setIsFavorite(() => favorites.some((item) => item.event_id === event_id));
     }
-  }, [favorites, event_id])
+  }, [favorites, event_id]);
 
-  // Toggle funktion 
   const toggleFavorite = async () => {
-	// Endpoint path
-    const endpoint = "https://api.mediehuset.net/detutroligeteater/favorites"
-	// Header options med token key
+    const endpoint = "https://api.mediehuset.net/detutroligeteater/favorites";
+
     const options = {
       headers: {
         Authorization: `Bearer ${loginData.access_token}`,
       },
-    }
+    };
 
-    console.log(favorites)
-	// Hvis favorit er true
+    console.log(favorites);
+
     if (isFavorite) {
-	  // Delete request til api endpoint
-	  await axios.delete(`${endpoint}/${event_id}`, options)
-      setIsFavorite(false)
+      await axios.delete(`${endpoint}/${event_id}`, options);
+      setIsFavorite(false);
     } else {
-	  // Sætter form data
-      const formData = new FormData()
-      formData.append("event_id", event_id)
-	  // Create kald til API endpoint
-      await axios.post(endpoint, formData, options)
-      setIsFavorite(true)
+      const formData = new FormData();
+      formData.append("event_id", event_id);
+      await axios.post(endpoint, formData, options);
+      setIsFavorite(true);
     }
-  }
+  };
 
   return (
     <>
-      <HeartIcon
-        onClick={toggleFavorite}
-        className={
-          isFavorite ? `${Styles.svg} ${Styles.active}` : Styles.svg
-        }
-      />
+      <div className={Style.hearticon} onClick={toggleFavorite}>
+        {isFavorite ? <FaHeart /> : <FaRegHeart />}
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default FavoriteButton
+export default FavoriteButton;

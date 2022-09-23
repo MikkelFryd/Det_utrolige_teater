@@ -1,13 +1,15 @@
-.svg {
-	border: none;
-	width: 2rem;
-	height: 2rem;
-	cursor: pointer;
-    transform: translate(65vw, 5vw);
+@import '../../assets/scss/vars.scss';
 
-}
-
-.active {
-    background-color:#D39D5B;
-
+.hearticon {
+	color: #D39D5B;
+	text-align: end;
+	margin: 1rem;
+	svg {
+		border: none;
+		width: 2rem;
+		height: 2rem;
+		cursor: pointer;
+		
+	}
+	
 }
